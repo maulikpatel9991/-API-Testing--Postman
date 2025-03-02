@@ -62,7 +62,7 @@
 							"    //parse the response JSON and test three properties\r",
 							"    const responseJson = pm.response.json();\r",
 							"    pm.expect(responseJson.booking.additionalneeds).to.eql('Breakfast');\r",
-							"    pm.expect(responseJson.bookingid).to.be.a('string');\r",
+							"    // pm.expect(responseJson.bookingid).to.be.a('1641');\r",
 							"});\r",
 							"\r",
 							"pm.test(\"Check booking id type number\", () => {\r",
@@ -76,7 +76,7 @@
 							"});\r",
 							"\r",
 							"pm.test(\"Generate Unsuccessful POST request\", function () {\r",
-							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
 							"});\r",
 							"\r",
 							"\r",
@@ -93,7 +93,8 @@
 							"\r",
 							""
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],

@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "65cf2493-b161-4f91-8e85-dca0c18ae6d2",
+		"_postman_id": "61a757f2-749c-4cf6-bbd7-0b8e34b575ed",
 		"name": "StudentDetails",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "10124921"
+		"_exporter_id": "26962749"
 	},
 	"item": [
 		{
@@ -127,24 +127,25 @@
 							"});\r",
 							"// validation for field value\r",
 							"pm.test(\"First Name validation\", function () {\r",
-							"    pm.expect(jsonData.data.first_name).to.eql('Minhaj');\r",
+							"    pm.expect(jsonData.data.first_name).to.eql('Redwan');\r",
 							"});\r",
 							"\r",
 							"pm.test(\"Middle Name validation\", function () {\r",
-							"    pm.expect(jsonData.data.middle_name).to.eql('Ahmed');\r",
+							"    pm.expect(jsonData.data.middle_name).to.eql('Adrian');\r",
 							"});\r",
 							"\r",
 							"pm.test(\"Last Name validation\", function () {\r",
-							"    pm.expect(jsonData.data.last_name).to.eql('Akib');\r",
+							"    pm.expect(jsonData.data.last_name).to.eql('Anik');\r",
 							"});\r",
 							"\r",
 							"pm.test(\"Date_of_birth validation\", function () {\r",
-							"    pm.expect(jsonData.data.date_of_birth).to.eql('20 Feb 1997');\r",
+							"    pm.expect(jsonData.data.date_of_birth).to.eql('Feb 5 1996');\r",
 							"});\r",
 							"\r",
 							""
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],

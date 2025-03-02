@@ -32,7 +32,7 @@ jobs:
 
     - name: Run StudentInfo API tests
       run: |
-        newman run ./StudentInfo_API/studentinfo.postman_collection.json -e ./StudentInfo_API/studentinfo.postman_environment.json 
+        newman run ./Studentinfo_api/StudentDetails.postman_collection.json -e ./Studentinfo_api/StudentDetails.postman_environment.json 
 
     # - name: Upload Newman HTML Report (Booking)
     #   uses: actions/upload-artifact@v3
