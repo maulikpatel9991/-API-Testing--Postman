@@ -28,32 +28,32 @@ jobs:
 
     - name: Run Booking API tests
       run: |
-        newman run ./Booking_API/booking.postman_collection.json -e ./Booking_API/booking.postman_environment.json --reporters cli,html,json --reporter-html-export ./newman-reports/booking-report.html --reporter-json-export ./newman-reports/booking-report.json
+        newman run ./Booking_API/booking.postman_collection.json -e ./Booking_API/booking.postman_environment.json 
 
     - name: Run StudentInfo API tests
       run: |
-        newman run ./StudentInfo_API/studentinfo.postman_collection.json -e ./StudentInfo_API/studentinfo.postman_environment.json --reporters cli,html,json --reporter-html-export ./newman-reports/studentinfo-report.html --reporter-json-export ./newman-reports/studentinfo-report.json
+        newman run ./StudentInfo_API/studentinfo.postman_collection.json -e ./StudentInfo_API/studentinfo.postman_environment.json 
 
-    - name: Upload Newman HTML Report (Booking)
-      uses: actions/upload-artifact@v3
-      with:
-        name: booking-api-report
-        path: ./newman-reports/booking-report.html
+    # - name: Upload Newman HTML Report (Booking)
+    #   uses: actions/upload-artifact@v3
+    #   with:
+    #     name: booking-api-report
+    #     path: ./newman-reports/booking-report.html
 
-    - name: Upload Newman JSON Report (Booking)
-      uses: actions/upload-artifact@v3
-      with:
-        name: booking-api-json-report
-        path: ./newman-reports/booking-report.json
+    # - name: Upload Newman JSON Report (Booking)
+    #   uses: actions/upload-artifact@v3
+    #   with:
+    #     name: booking-api-json-report
+    #     path: ./newman-reports/booking-report.json
 
-    - name: Upload Newman HTML Report (StudentInfo)
-      uses: actions/upload-artifact@v3
-      with:
-        name: studentinfo-api-report
-        path: ./newman-reports/studentinfo-report.html
+    # - name: Upload Newman HTML Report (StudentInfo)
+    #   uses: actions/upload-artifact@v3
+    #   with:
+    #     name: studentinfo-api-report
+    #     path: ./newman-reports/studentinfo-report.html
 
-    - name: Upload Newman JSON Report (StudentInfo)
-      uses: actions/upload-artifact@v3
-      with:
-        name: studentinfo-api-json-report
-        path: ./newman-reports/studentinfo-report.json
+    # - name: Upload Newman JSON Report (StudentInfo)
+    #   uses: actions/upload-artifact@v3
+    #   with:
+    #     name: studentinfo-api-json-report
+    #     path: ./newman-reports/studentinfo-report.json
