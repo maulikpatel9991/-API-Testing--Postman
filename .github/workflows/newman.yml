@@ -1,0 +1,59 @@
+name: Run Newman Tests and Generate Reports
+
+on:
+  push:
+    branches:
+      - main  # Trigger on push to the main branch
+  pull_request:
+    branches:
+      - main  # Trigger on pull requests to the main branch
+
+jobs:
+  newman_tests:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'  # Set Node.js version, update as needed
+
+    - name: Install dependencies
+      run: |
+        npm install -g newman
+        npm install -g newman-reporter-html newman-reporter-json
+
+    - name: Run Booking API tests
+      run: |
+        newman run ./Booking_API/booking.postman_collection.json -e ./Booking_API/booking.postman_environment.json --reporters cli,html,json --reporter-html-export ./newman-reports/booking-report.html --reporter-json-export ./newman-reports/booking-report.json
+
+    - name: Run StudentInfo API tests
+      run: |
+        newman run ./Studentinfo_api/studentinfo.postman_collection.json -e ./Studentinfo_api/studentinfo.postman_environment.json --reporters cli,html,json --reporter-html-export ./newman-reports/studentinfo-report.html --reporter-json-export ./newman-reports/studentinfo-report.json
+
+    - name: Upload Newman HTML Report (Booking)
+      uses: actions/upload-artifact@v2
+      with:
+        name: booking-api-report
+        path: ./newman-reports/booking-report.html
+
+    - name: Upload Newman JSON Report (Booking)
+      uses: actions/upload-artifact@v2
+      with:
+        name: booking-api-json-report
+        path: ./newman-reports/booking-report.json
+
+    - name: Upload Newman HTML Report (StudentInfo)
+      uses: actions/upload-artifact@v2
+      with:
+        name: studentinfo-api-report
+        path: ./newman-reports/studentinfo-report.html
+
+    - name: Upload Newman JSON Report (StudentInfo)
+      uses: actions/upload-artifact@v2
+      with:
+        name: studentinfo-api-json-report
+        path: ./newman-reports/studentinfo-report.json
