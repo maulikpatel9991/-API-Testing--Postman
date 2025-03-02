@@ -35,25 +35,25 @@ jobs:
         newman run ./Studentinfo_api/StudentDetails.postman_collection.json -e ./Studentinfo_api/StudentDetails.postman_environment.json 
 
     - name: Upload Newman HTML Report (Booking)
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v2  # Updated to v2
       with:
         name: booking-api-report
         path: ./newman-reports/booking-report.html
 
     - name: Upload Newman JSON Report (Booking)
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v2  # Updated to v2
       with:
         name: booking-api-json-report
         path: ./newman-reports/booking-report.json
 
     - name: Upload Newman HTML Report (StudentInfo)
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v2  # Updated to v2
       with:
         name: studentinfo-api-report
         path: ./newman-reports/studentinfo-report.html
 
     - name: Upload Newman JSON Report (StudentInfo)
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v2  # Updated to v2
       with:
         name: studentinfo-api-json-report
         path: ./newman-reports/studentinfo-report.json
